@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_07_190431) do
+ActiveRecord::Schema.define(version: 2021_04_07_190832) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2021_04_07_190431) do
     t.string "notes"
     t.string "photos"
     t.time "pace"
-    t.string "type"
+    t.string "workout_type"
     t.string "location"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
