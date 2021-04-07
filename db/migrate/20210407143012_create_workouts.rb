@@ -7,6 +7,10 @@ class CreateWorkouts < ActiveRecord::Migration[6.1]
       t.string :notes
       t.string :photos
       t.time :pace
+      t.string :type
+      t.string :location
+
+
 
       t.timestamps
     end
