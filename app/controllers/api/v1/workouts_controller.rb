@@ -5,5 +5,16 @@ class Api::V1::WorkoutsController < ActionController::API
     render json: WorkoutsSerializer.new(@workouts)
   end
 
+  def create
+    raise params.inspect
+  end
+
+
+  private
+
+  def workout_params
+    params.require()
+
+
 
 end
