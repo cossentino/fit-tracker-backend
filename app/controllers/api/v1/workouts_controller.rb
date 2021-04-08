@@ -1,4 +1,4 @@
-class Api::V1::WorkoutsController < ActionController::API
+class Api::V1::WorkoutsController < ApplicationController
 
   def index
     @workouts = User.find_by(id: params[:user_id]).workouts

@@ -10,6 +10,7 @@ gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 
+gem 'dotenv'
 gem 'jwt'
 gem 'pg'
 gem 'fast_jsonapi'
