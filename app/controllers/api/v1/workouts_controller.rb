@@ -7,13 +7,17 @@ class Api::V1::WorkoutsController < ActionController::API
 
   def create
     raise params.inspect
+    user = User.find_by(id: params[:user_id])
+    wo = user.workouts.build(workout_params)
+    render json: WorkoutsSerializer.new(wo)
   end
 
 
   private
 
   def workout_params
-    params.require()
+    params.require(:workout).permit(:user_id, :location, :workout_type, :exert, :date, :pace, :notes)
+  end
 
 
 
