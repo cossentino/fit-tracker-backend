@@ -6,10 +6,11 @@ class Api::V1::WorkoutsController < ActionController::API
   end
 
   def create
-    raise params.inspect
     user = User.find_by(id: params[:user_id])
     wo = user.workouts.build(workout_params)
-    render json: WorkoutsSerializer.new(wo)
+    if wo.save
+      render json: WorkoutsSerializer.new(wo)
+    end
   end
 
 
