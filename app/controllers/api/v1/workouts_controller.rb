@@ -17,7 +17,7 @@ class Api::V1::WorkoutsController < ApplicationController
   private
 
   def workout_params
-    params.require(:workout).permit(:user_id, :location, :workout_type, :exert, :date, :pace, :notes)
+    params.require(:workout).permit(:user_id, :location, :workout_type, :exert, :date, :pace, :notes, :miles)
   end
 
 
