@@ -13,6 +13,11 @@ class Api::V1::WorkoutsController < ApplicationController
     end
   end
 
+  def destroy
+    wo = Workout.find_by(id: params[:id])
+    wo.destroy
+  end
+
 
   private
 
