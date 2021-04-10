@@ -1,7 +1,7 @@
 class Api::V1::UsersController < ApplicationController
 
   def profile
-    render json: { user: UserSerializer.new(current_user) }, status: :accepted
+    render json: { user: UsersSerializer.new(current_user) }, status: :accepted
   end
   
   def create
@@ -10,7 +10,7 @@ class Api::V1::UsersController < ApplicationController
       @token = encode_token(user_id: @user.id)
       render json: { user: UsersSerializer.new(@user), jwt: @token }, status: :created
     else
-      render json: { error: 'failed to create user' }, status: :not_acceptable
+      render json: { errors: @user.errors.full_messages }, status: :not_acceptable
     end
   end
   
