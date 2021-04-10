@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :users do
         get '/profile', to: 'users#profile'
+        resources :goals
         resources :workouts
       end
       post '/users/login', to: 'auth#create'
