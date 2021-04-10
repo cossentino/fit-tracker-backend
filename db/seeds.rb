@@ -8,40 +8,47 @@
 
 
 
-workouts = [{
-  date: '2021-03-02',
-  workout_type: 'swim',
-  exert: 9,
-  miles: 3,
-  location: "Boston, MA",
-  notes: "tough swim"},
+# workouts = [{
+#   date: '2021-03-02',
+#   workout_type: 'swim',
+#   exert: 9,
+#   miles: 3,
+#   location: "Boston, MA",
+#   notes: "tough swim"},
 
-  {
-    date: '2020-12-31',
-    workout_type: 'bike',
-    exert: 5,
-    miles: 15,
-    pace: '05:00',
-    location: "Winchester, MA",
-    notes: "easy bike ride through the fells"},
+#   {
+#     date: '2020-12-31',
+#     workout_type: 'bike',
+#     exert: 5,
+#     miles: 15,
+#     pace: '05:00',
+#     location: "Winchester, MA",
+#     notes: "easy bike ride through the fells"},
   
-    {
-      date: '2021-04-01',
-      workout_type: 'run',
-      exert: 8,
-      miles: 10,
-      pace: '07:56',
-      location: "Boston, MA",
-      notes: "weekend long run"},
+#     {
+#       date: '2021-04-01',
+#       workout_type: 'run',
+#       exert: 8,
+#       miles: 10,
+#       pace: '07:56',
+#       location: "Boston, MA",
+#       notes: "weekend long run"},
     
-      {
-        date: '2021-03-15',
-        workout_type: 'swim',
-        exert: 3,
-        miles: 1,
-        pace: '12:00',
-        location: "Boston, MA",
-        notes: "morning swim"}]
+#       {
+#         date: '2021-03-15',
+#         workout_type: 'swim',
+#         exert: 3,
+#         miles: 1,
+#         pace: '12:00',
+#         location: "Boston, MA",
+#         notes: "morning swim"}]
+
+goals = [{
+  description: "Ian's half-marathon training",
+  month: "April",
+  sport: "run",
+  miles: 100
+}]
 
 workouts.each do |w|
   wo = User.first.workouts.build(w)
