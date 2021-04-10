@@ -47,10 +47,10 @@ goals = [{
   description: "Ian's half-marathon training",
   month: "April",
   sport: "run",
-  miles: 100
+  miles: 100,
 }]
 
-workouts.each do |w|
-  wo = User.first.workouts.build(w)
-  wo.save
+goals.each do |g|
+  goal = User.first.goals.build(g)
+  goal.save
 end
