@@ -6,9 +6,10 @@ class Api::V1::GoalsController < ApplicationController
   end
 
   def create
-    @goal = goal.new(goal_params)
-    if goal.valid?
-      goal.save
+    @user = User.find_by(id: params[:user_id])
+    @goal = @user.goals.build(goal_params)
+    if @goal.valid?
+      @goal.save
       render json: GoalsSerializer.new(@goal), status: :accepted
     else
       render json: { errors: @goal.errors.full_messages }, status: :not_acceptable
@@ -18,8 +19,8 @@ class Api::V1::GoalsController < ApplicationController
   private
 
 
-  def user_params
-    params.require(:user).permit(:username, :first_name, :last_name, :password, :email)
+  def goal_params
+    params.require(:goal).permit(:description, :miles, :month, :sport, :user_id)
   end
 
 
