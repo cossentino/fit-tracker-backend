@@ -14,6 +14,7 @@ class Api::V1::WorkoutsController < ApplicationController
   end
 
   def destroy
+    raise params.inspect
     wo = Workout.find_by(id: params[:id])
     wo.destroy
   end
