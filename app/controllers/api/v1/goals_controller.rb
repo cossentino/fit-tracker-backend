@@ -17,7 +17,6 @@ class Api::V1::GoalsController < ApplicationController
   end
 
   def destroy
-    byebug
     my_goal = Goal.find_by(id: params[:id])
     my_goal.destroy
   end
