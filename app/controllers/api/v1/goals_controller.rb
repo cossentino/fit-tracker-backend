@@ -1,4 +1,5 @@
 class Api::V1::GoalsController < ApplicationController
+  before_action :authorized
 
   def index
     @goals = User.find_by(id: params[:user_id]).goals

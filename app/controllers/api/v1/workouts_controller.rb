@@ -1,4 +1,5 @@
 class Api::V1::WorkoutsController < ApplicationController
+  before_action :authorized
 
   def index
     @workouts = User.find_by(id: params[:user_id]).workouts.order(:date).reverse_order
